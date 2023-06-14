@@ -53,6 +53,15 @@
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --- |
 | <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> | <img width="75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Database-mysql.svg/1448px-Database-mysql.svg.png"> |
 
+
+## created table user :
+
+![Alt text](image.png)
+
+## created table blog
+
+![Alt text](image-1.png)
+
 # User Schema
 
 ```
@@ -339,3 +348,5 @@
 | GET    | /api/blogs/:id | This endpoint should allow users to delete a specific blogs identified by its ID.                | 200         |
 | POST   | /api/blogs     | This endpoint should allow the user to create the blogs.                                         | 200         |
 | GET    | /api/blogs     | This point should list all the blogs so far with the user and blogs details.                     | 200         |
+
+
