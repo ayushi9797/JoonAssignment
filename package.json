@@ -1,0 +1,29 @@
+{
+  "name": "joonweb_ass",
+  "version": "1.0.0",
+  "description": "Building API using Node.js, Express.js, and MySQL\r In this project, you will be developing a RESTful API using Node.js, Express.js, and MySQL.\r The API will allow users to perform various operations related to users and blogs. You will\r need to implement the following tables in your MySQL database:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushi9797/Joonweb_ass.git",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayushi9797/Joonweb_ass/issues"
+  },
+  "homepage": "https://github.com/ayushi9797/Joonweb_ass#readme",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.5",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.32.0",
+    "sequelize-cli": "^6.6.1"
+  }
+}
