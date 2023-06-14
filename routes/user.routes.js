@@ -48,18 +48,50 @@ userRouter.get('/users', async (req, res) => {
         const User = await users.findAll();
         console.log(User);
 
-        //  generating confirmation message response of creating the user successfully
+        //  generating confirmation message response of Getting the user successfully
         res.status(200).send({ message: ` Here your all Users   👥`, User })
     } catch (error) {
         console.log(error.message)
 
-        // if error is comimg in creating  then send creating  failed message
+        // if error is comimg in creating  then send Getting  failed message
         res.status(404).send({ message: `error ☹️ IN getting   the  users : ${error.message}` });
 
 
     }
 })
 
+//! Updates an existing user specified by :id parameter.
+
+//  Put Request
+
+userRouter.put('/users/:id', async (req, res) => {
+    try {
+
+        //  desturing usermodel with respect to request body
+        const { profilepic, name, slug } = req.body;
+
+        // updating the user by id parameter 
+        const User = await users.upsert({
+            id: req.params.id,
+            profilepic,
+            name,
+            slug,
+
+        })
+        console.log(User);
+        //  generating confirmation message response of Updating the user successfully
+
+        res.status(200).send({ message: ` Here you can update user details    👥`, User })
+    } catch (error) {
+
+         // if error is comimg in creating  then send UPdating  failed message
+
+        res.status(404).send({ message: `error ☹️ IN Updating    the  users : ${error.message}` });
+
+    }
+})
+
+// !  Deletes an existing user specified by :id parameter.
 
 
 
