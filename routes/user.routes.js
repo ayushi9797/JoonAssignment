@@ -1,3 +1,299 @@
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     users:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: integer
+ *           format: int32
+ *           description: The ID of the user
+ *         profilepic:
+ *           type: string
+ *           description: The profile picture of the user
+ *         name:
+ *           type: string
+ *           description: The name of the user
+ *         slug:
+ *           type: string
+ *           description: The slug of the user
+ *         created:
+ *           type: string
+ *           format: date-time
+ *           description: The creation date of the user
+ *         modified:
+ *           type: string
+ *           format: date-time
+ *           description: The modification date of the user
+ *       required:
+ *         - name
+ *       example:
+ *         id: 1
+ *         profilepic: example.jpg
+ *         name: John Doe
+ *         slug: john-doe
+ *         created: 2023-06-01T12:34:56Z
+ *         modified: 2023-06-01T12:34:56Z
+ */
+
+/**
+ * @swagger
+ * paths:
+ *   /users:
+ *     post:
+ *       summary: Create a new user
+ *       requestBody:
+ *         required: true
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 profilepic:
+ *                   type: string
+ *                 name:
+ *                   type: string
+ *                 slug:
+ *                   type: string
+ *               required:
+ *                 - profilepic
+ *                 - name
+ *                 - slug
+ *       responses:
+ *         '200':
+ *           description: User created successfully
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ *                   data:
+ *                     type: object
+ *                     properties:
+ *                       created:
+ *                         type: string
+ *                         format: date-time
+ *                       modified:
+ *                         type: string
+ *                         format: date-time
+ *                       id:
+ *                         type: number
+ *                       profilepic:
+ *                         type: string
+ *                       name:
+ *                         type: string
+ *                       slug:
+ *                         type: string
+ *                       updatedAt:
+ *                         type: string
+ *                         format: date-time
+ *                       createdAt:
+ *                         type: string
+ *                         format: date-time
+ *         '404':
+ *           description: Error in creating the user
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ */
+
+// Get Request
+
+/**
+ * @swagger
+ * paths:
+ *   /users:
+ *     get:
+ *       summary: Get all users
+ *       responses:
+ *         '200':
+ *           description: Successfully retrieved all users
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ *                   User:
+ *                     type: array
+ *                     items:
+ *                       $ref: '#/components/schemas/users'
+ *         '404':
+ *           description: Failed to get users
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ *                   error:
+ *                     type: string
+ *
+ * components:
+ *   schemas:
+ *     users:
+ *       type: object
+ *       properties:
+ *         created:
+ *           type: string
+ *           format: date-time
+ *         modified:
+ *           type: string
+ *           format: date-time
+ *         id:
+ *           type: integer
+ *         profilepic:
+ *           type: string
+ *         name:
+ *           type: string
+ *         slug:
+ *           type: string
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *     createUserRequest:
+ *       type: object
+ *       properties:
+ *         profilepic:
+ *           type: string
+ *         name:
+ *           type: string
+ *         slug:
+ *           type: string
+ *     createUserResponse:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *         data:
+ *           $ref: '#/components/schemas/users'
+ */
+
+//  
+
+/**
+ * @swagger
+ * paths:
+ *   /users/{id}:
+ *     put:
+ *       summary: Update user details
+ *       parameters:
+ *         - in: path
+ *           name: id
+ *           required: true
+ *           schema:
+ *             type: string
+ *           description: The ID of the user to update
+ *       requestBody:
+ *         required: true
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 profilepic:
+ *                   type: string
+ *                 name:
+ *                   type: string
+ *                 slug:
+ *                   type: string
+ *               required:
+ *                 - profilepic
+ *                 - name
+ *                 - slug
+ *       responses:
+ *         '200':
+ *           description: User details updated successfully
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ *                   User:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         created:
+ *                           type: string
+ *                           format: date-time
+ *                         modified:
+ *                           type: string
+ *                           format: date-time
+ *                         id:
+ *                           type: string
+ *                         profilepic:
+ *                           type: string
+ *                         name:
+ *                           type: string
+ *                         slug:
+ *                           type: string
+ *         '404':
+ *           description: Error occurred while updating user
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ */
+
+
+// Delete API
+
+/**
+ * @swagger
+ * paths:
+ *   /users/{id}:
+ *     delete:
+ *       summary: Delete a user by ID
+ *       parameters:
+ *         - in: path
+ *           name: id
+ *           required: true
+ *           schema:
+ *             type: string
+ *           description: The ID of the user to delete
+ *       responses:
+ *         '200':
+ *           description: User deleted successfully
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   isError:
+ *                     type: boolean
+ *                     default: false
+ *                   User:
+ *                     type: number
+ *         '404':
+ *           description: Error occurred while deleting the user
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   message:
+ *                     type: string
+ */
+
+
 const express = require('express');
 const app = express();
 
