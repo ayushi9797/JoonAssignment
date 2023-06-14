@@ -1,6 +1,8 @@
 // ! Importing express module
 const express = require('express');
 const app = express();
+const swaggerjsdoc = require("swagger-jsdoc");
+const swaggerui = require("swagger-ui-express");
 app.use(express.json())
 
 // ! Importing connectionn 
@@ -21,6 +23,38 @@ const { blogRouter } = require('./routes/blog.routes');
 
 app.use('/api', userRouter);
 app.use("/api", blogRouter);
+
+// Swagger API Documentation
+const options = {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "JoonWeb  api doc",
+            version: "0.1",
+            description:
+                "This is a Blog website documentation where you can find API for CRUD operations ",
+            contact: {
+                name: "Ayushi",
+                email: "soniayushi345@gmail.com"
+            }
+
+        },
+        servers: [
+            {
+                url: "http://localhost:8080/"
+            },
+        ],
+    },
+    apis: ["./routes/*.js"]
+}
+
+
+
+const spacs = swaggerjsdoc(options);
+app.use("/api-docs", swaggerui.serve, swaggerui.setup(spacs))
+
+
+
 
 // ! Home route
 
