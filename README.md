@@ -236,3 +236,94 @@
 # Delete Route
 
 `http://localhost:8080/api/users/2`
+
+# Blogs -> CRUD routes
+
+# Create a new blog
+
+`http://localhost:8080/api/blogs`
+
+```
+{
+    "blogimage": "ayushi.png",
+    "blogtitle": "ayushi",
+    "blogslug": "ayushi",
+    "blogcontent":"ayushi"
+}
+
+```
+
+## Successfully created a new blog
+
+```
+{
+    "message": "Successfully created blog data  👤",
+    "data": {
+        "blogid": 1,
+        "blogimage": "ayushi.png",
+        "blogtitle": "ayushi",
+        "blogslug": "ayushi",
+        "blogcontent": "ayushi",
+        "updatedAt": "2023-06-14T10:14:27.746Z",
+        "createdAt": "2023-06-14T10:14:27.746Z"
+    }
+}
+
+```
+
+# Get Routes
+
+`http://localhost:8080/api/blogs`
+
+## Response Status
+
+```
+{
+    "message": " Here your all Blogs   👥",
+    "User": [
+        {
+            "blogid": 1,
+            "blogimage": "ayushi.png",
+            "blogtitle": "ayushi",
+            "blogslug": "ayushi",
+            "blogcontent": "ayushi",
+            "blogcreated": null,
+            "blogmodified": null,
+            "createdAt": "2023-06-14T10:14:27.000Z",
+            "updatedAt": "2023-06-14T10:14:27.000Z"
+        }
+    ]
+}
+```
+
+# Get Routes by Specific id
+
+`http://localhost:8080/api/blogs/1`
+
+## Response Status
+
+```
+{
+    "message": " Here your all blogs by specific id   👥",
+    "User": [
+        {
+            "blogid": 1,
+            "blogimage": "ayushi.png",
+            "blogtitle": "ayushi",
+            "blogslug": "ayushi",
+            "blogcontent": "ayushi",
+            "blogcreated": null,
+            "blogmodified": null,
+            "createdAt": "2023-06-14T10:14:27.000Z",
+            "updatedAt": "2023-06-14T10:14:27.000Z"
+        }
+    ]
+}
+
+```
+
+# Put Request
+
+`http://localhost:8080/api/blogs/1`
+
+
