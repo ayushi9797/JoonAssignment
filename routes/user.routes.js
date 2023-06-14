@@ -84,7 +84,7 @@ userRouter.put('/users/:id', async (req, res) => {
         res.status(200).send({ message: ` Here you can update user details    👥`, User })
     } catch (error) {
 
-         // if error is comimg in creating  then send UPdating  failed message
+        // if error is comimg in creating  then send UPdating  failed message
 
         res.status(404).send({ message: `error ☹️ IN Updating    the  users : ${error.message}` });
 
@@ -92,6 +92,39 @@ userRouter.put('/users/:id', async (req, res) => {
 })
 
 // !  Deletes an existing user specified by :id parameter.
+
+// Delete route
+
+userRouter.delete('/users/:id', async (req, res) => {
+    try {
+
+        //Getting user by id
+        const User = await users.destroy({
+
+            // applying sql query for deleting users 
+            where: {
+                id: req.params.id,
+            },
+
+        })
+
+        //  generating confirmation message response of Deleting the user successfully
+
+        res.status(200).json({
+            isError: false,
+            User,
+        });
+    } catch (error) {
+        console.log(error.message);
+
+        // if error is comimg in creating  then send Deleting   failed message
+
+        res.status(404).send({ message: `error ☹️ IN Deleting   the  users : ${error.message}` });
+
+    }
+})
+
+
 
 
 
