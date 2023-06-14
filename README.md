@@ -17,6 +17,8 @@
 
 - `http://localhost:8080/api-docs/#/`
 
+![Alt text](image-2.png)
+
 # REQUIREMENTS
 
 - User can register
