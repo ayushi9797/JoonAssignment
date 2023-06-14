@@ -1,5 +1,9 @@
+// !Making Users Schema 
 module.exports = (sequelize, DataTypes) => {
     const users = sequelize.define("users", {
+
+        // defining the schema entities with data types
+
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,

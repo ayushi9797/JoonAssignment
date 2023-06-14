@@ -1,4 +1,8 @@
+// ! Making Blog Schema 
+
 module.exports = (sequelize, DataTypes) => {
+    
+    // making entitiies with data types
     const blogs = sequelize.define("blogs", {
         blogid: {
             type: DataTypes.INTEGER,
