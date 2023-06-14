@@ -294,6 +294,16 @@
  */
 
 
+
+
+
+// ! USER ROUTER server logic !----------------------------------------------------------------
+
+
+
+
+
+
 const express = require('express');
 const app = express();
 
@@ -302,6 +312,10 @@ const { users } = require("../models/index");
 
 // ! Making User Router 
 const userRouter = express.Router();
+
+
+
+
 
 // ! Creating Post request for which user will be created 
 
@@ -333,6 +347,12 @@ userRouter.post('/users', async (req, res) => {
 })
 
 
+
+
+
+
+
+
 // ! Retrieves a list of all users
 
 // Get Request
@@ -355,6 +375,12 @@ userRouter.get('/users', async (req, res) => {
 
     }
 })
+
+
+
+
+
+
 
 //! Updates an existing user specified by :id parameter.
 
@@ -386,6 +412,12 @@ userRouter.put('/users/:id', async (req, res) => {
 
     }
 })
+
+
+
+
+
+
 
 // !  Deletes an existing user specified by :id parameter.
 
