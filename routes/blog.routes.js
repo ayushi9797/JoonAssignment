@@ -85,7 +85,7 @@ blogRouter.get('/blogs', async (req, res) => {
     }
 })
 
-// http://localhost:8080/api/blogs/3
+
 
 //!Updates an existing blog specified by :id parameter.
 
