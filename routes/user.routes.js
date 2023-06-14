@@ -30,11 +30,36 @@ userRouter.post('/users', async (req, res) => {
 
     } catch (error) {
         console.log(error.message)
-         // if error is comimg in creating  then send creating  failed message
+        // if error is comimg in creating  then send creating  failed message
         res.status(404).send({ message: `error ☹️ IN creating  the  users : ${error.message}` });
 
     }
 })
+
+
+// ! Retrieves a list of all users
+
+// Get Request
+
+userRouter.get('/users', async (req, res) => {
+    try {
+
+        // finding all the users that created 
+        const User = await users.findAll();
+        console.log(User);
+
+        //  generating confirmation message response of creating the user successfully
+        res.status(200).send({ message: ` Here your all Users   👥`, User })
+    } catch (error) {
+        console.log(error.message)
+
+        // if error is comimg in creating  then send creating  failed message
+        res.status(404).send({ message: `error ☹️ IN getting   the  users : ${error.message}` });
+
+
+    }
+})
+
 
 
 
