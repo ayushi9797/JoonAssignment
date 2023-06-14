@@ -400,7 +400,7 @@ blogRouter.put('/blogs/:id', async (req, res) => {
         console.log(User);
         //  generating confirmation message response of Updating the user successfully
 
-        res.status(200).send({ message: ` Here you can update blogs     👥`, User })
+        res.status(200).send({ message: ` Here you can update blogs 👥`, User })
     } catch (error) {
 
         // if error is comimg in creating  then send UPdating  failed message
