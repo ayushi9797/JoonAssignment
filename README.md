@@ -41,7 +41,6 @@
 - `npx sequilize-cli` npm install
 - `npx sequelize-cli db:migrate `
 
-
 * To run Mysql server with Express Node
 
 - `nodemon server`
@@ -83,7 +82,6 @@
 
 ```
 
-
 # UserModel
 
 ```
@@ -96,26 +94,33 @@
 
 ```
 
-## Successful Response
+# BlogSchema
 
 ```
-
-{
-"message": " User Successfully created Thanks for registering 👥",
-"data": {
-"created": "2023-06-14T08:18:52.201Z",
-"modified": "2023-06-14T08:18:52.202Z",
-"id": 3,
-"profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
-"name": "ayushi",
-"slug": "string",
-"updatedAt": "2023-06-14T08:18:52.212Z",
-"createdAt": "2023-06-14T08:18:52.212Z"
-}
-}
-
+ blogid: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        blogimage: {
+            type: DataTypes.STRING,
+        },
+        blogtitle: {
+            type: DataTypes.STRING,
+        },
+        blogslug: {
+            type: DataTypes.STRING,
+        },
+        blogcontent: {
+            type: DataTypes.TEXT,
+        },
+        blogcreated: {
+            type: DataTypes.DATE,
+        },
+        blogmodified: {
+            type: DataTypes.DATE,
+        },
 ```
-
 
 # BlogModel
 
@@ -130,4 +135,104 @@
 
 ```
 
+# Routes for users
 
+- Post routes
+  `http://localhost:8080/api/users`
+
+  ## Create a new user
+
+  ```
+  {
+    "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+    "name": "ema",
+    "slug": "cat"
+  }
+  ```
+
+## Successful response of creating user
+
+```
+{
+    "message": " User Successfully created Thanks for registering  👥",
+    "data": {
+        "created": "2023-06-14T08:52:50.975Z",
+        "modified": "2023-06-14T08:52:50.975Z",
+        "id": 2,
+        "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+        "name": "ema",
+        "slug": "cat",
+        "updatedAt": "2023-06-14T08:52:50.975Z",
+        "createdAt": "2023-06-14T08:52:50.975Z"
+    }
+}
+```
+
+# Get Route
+
+`http://localhost:8080/api/users`
+
+## Successful result
+
+```
+{
+    "message": " Here your all Users   👥",
+    "User": [
+        {
+            "id": 1,
+            "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+            "name": "cat",
+            "slug": "string",
+            "created": "2023-06-14T08:52:33.000Z",
+            "modified": "2023-06-14T08:52:33.000Z",
+            "createdAt": "2023-06-14T08:52:33.000Z",
+            "updatedAt": "2023-06-14T08:52:33.000Z"
+        },
+        {
+            "id": 2,
+            "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+            "name": "ema",
+            "slug": "cat",
+            "created": "2023-06-14T08:52:50.000Z",
+            "modified": "2023-06-14T08:52:50.000Z",
+            "createdAt": "2023-06-14T08:52:50.000Z",
+            "updatedAt": "2023-06-14T08:52:50.000Z"
+        }
+    ]
+}
+```
+
+# Put Route
+
+`http://localhost:8080/api/users/2`
+
+```
+{
+    "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+    "name": "doremon",
+    "slug": "nobita"
+}
+```
+
+## Successfull response
+
+```
+{
+    "message": " Here you can update user details    👥",
+    "User": [
+        {
+            "created": "2023-06-14T10:20:56.833Z",
+            "modified": "2023-06-14T10:20:56.833Z",
+            "id": "2",
+            "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+            "name": "doremon",
+            "slug": "nobita"
+        },
+        false
+    ]
+}
+```
+
+# Delete Route
+
+`http://localhost:8080/api/users/2`
