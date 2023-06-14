@@ -125,9 +125,4 @@ userRouter.delete('/users/:id', async (req, res) => {
 })
 
 
-
-
-
-
-
 module.exports = { userRouter }
