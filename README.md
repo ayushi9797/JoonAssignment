@@ -3,7 +3,7 @@
 # Nodejs
 
 - Node.js is an open-source, server-side JavaScript runtime environment that allows you to run JavaScript code outside of a web browser
--
+
 
 # Express
 
@@ -12,6 +12,10 @@
 # Mysql
 
 - MySQL is an open-source relational database management system (RDBMS) that allows you to store, organize, and manage structured data
+
+# Swagger docs/
+
+- `http://localhost:8080/api-docs/#/`
 
 # REQUIREMENTS
 
@@ -358,3 +362,10 @@
 | GET    | /api/blogs/:id | This endpoint should allow users to delete a specific blogs identified by its ID.                | 200         |
 | POST   | /api/blogs     | This endpoint should allow the user to create the blogs.                                         | 200         |
 | GET    | /api/blogs     | This point should list all the blogs so far with the user and blogs details.                     | 200         |
+
+# Swagger
+
+- npm i swagger-jsdoc
+- npm i swagger-ui-express
+
+
