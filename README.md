@@ -326,4 +326,16 @@
 
 `http://localhost:8080/api/blogs/1`
 
+# All routes
 
+| METHOD | ENDPOINT       | DESCRIPTION                                                                                      | STATUS CODE |
+| ------ | -------------- | ------------------------------------------------------------------------------------------------ | ----------- |
+| POST   | /api/users     | This endpoint should allow users to register and create.                                         | 200         |
+|        |                |
+| GET    | /api/users     | This endpoint should return a list of all available users.                                       | 200         |
+| PUT    | /api/users/:id | This endpoint should allow to update the details of a specific users identified by its ID.       | 200         |
+| DELETE | /api/users/:id | This endpoint should allow to users to delete details to the system.                             | 200         |
+| PUT    | /api/blogs/:id | This endpoint should allow users to update the details of a specific blogs identified by its ID. | 200         |
+| GET    | /api/blogs/:id | This endpoint should allow users to delete a specific blogs identified by its ID.                | 200         |
+| POST   | /api/blogs     | This endpoint should allow the user to create the blogs.                                         | 200         |
+| GET    | /api/blogs     | This point should list all the blogs so far with the user and blogs details.                     | 200         |
