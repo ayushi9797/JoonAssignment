@@ -4,7 +4,6 @@
 
 - Node.js is an open-source, server-side JavaScript runtime environment that allows you to run JavaScript code outside of a web browser
 
-
 # Express
 
 - Express is just a framework, that can help us in creating the server in very easy way
@@ -18,6 +17,10 @@
 - `http://localhost:8080/api-docs/#/`
 
 ![Alt text](image-2.png)
+
+# Postman Collection
+
+- ./joon.postman_collections.json
 
 # REQUIREMENTS
 
@@ -36,7 +39,15 @@
 
 ### To run Mysql with Express Nodejs , follow these steps:->
 
-#### Creating First Server
+#### Running node.js locally
+
+- install all dependencies `npm install`
+
+* To run Mysql server with Express Node : `nodemon server`
+
+---
+
+#### Creating Server
 
 - It is not an inbuilt module of node, so we have to install it using `npm`
 - Create a node project by `npm init -y` .
@@ -50,6 +61,8 @@
 * To run Mysql server with Express Node
 
 - `nodemon server`
+
+#
 
 # Tech Stack Used: -
 
@@ -250,8 +263,8 @@
             "modified": "2023-06-14T10:20:56.833Z",
             "id": "2",
             "profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
-            "name": "doremon",
-            "slug": "nobita"
+            "name": "ayu",
+            "slug": "chiku"
         },
         false
     ]
@@ -369,5 +382,3 @@
 
 - npm i swagger-jsdoc
 - npm i swagger-ui-express
-
-
