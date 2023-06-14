@@ -38,6 +38,9 @@
 - Initialise a node project and install `nodemon`
 - Install `express`
 - Install some more dependencies `dotenv`, `mysql2`, `sequelize`,`sequelize-cli` ny npm install
+- `npx sequilize-cli` npm install
+- `npx sequelize-cli db:migrate `
+
 
 * To run Mysql server with Express Node
 
@@ -51,28 +54,80 @@
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --- |
 | <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> | <img width="75px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Database-mysql.svg/1448px-Database-mysql.svg.png"> |
 
+# User Schema
+
+```
+ id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        profilepic: {
+            type: DataTypes.STRING,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        slug: {
+            type: DataTypes.STRING,
+        },
+        created: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
+        modified: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
+        },
+
+```
+
+
 # UserModel
 
 ```
+
 {
-
-   "profilepic" : "ayushi.png",
-    "name" : "ayushi",
-    "slug" : "string",
-
+"profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+"name": "ayushi",
+"slug": "string"
 }
 
 ```
+
+## Successful Response
+
+```
+
+{
+"message": " User Successfully created Thanks for registering 👥",
+"data": {
+"created": "2023-06-14T08:18:52.201Z",
+"modified": "2023-06-14T08:18:52.202Z",
+"id": 3,
+"profilepic": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+"name": "ayushi",
+"slug": "string",
+"updatedAt": "2023-06-14T08:18:52.212Z",
+"createdAt": "2023-06-14T08:18:52.212Z"
+}
+}
+
+```
+
 
 # BlogModel
 
 ```
+
 {
-    "blogimage": "hy.png",
-    "blogtitle": "hy",
-    "blogslug": "hy",
-    "blogcontent":"hy"
+"blogimage": "https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png",
+"blogtitle": "hy",
+"blogslug": "hy",
+"blogcontent":"hy"
 }
 
-
 ```
+
+
