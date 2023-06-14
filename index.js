@@ -1,8 +1,11 @@
 // ! Importing express module
 const express = require('express');
 const app = express();
+
+// ! Importing Swagger module
 const swaggerjsdoc = require("swagger-jsdoc");
 const swaggerui = require("swagger-ui-express");
+
 app.use(express.json())
 
 // ! Importing connectionn 
@@ -24,7 +27,8 @@ const { blogRouter } = require('./routes/blog.routes');
 app.use('/api', userRouter);
 app.use("/api", blogRouter);
 
-// Swagger API Documentation
+//! Swagger API Documentation
+
 const options = {
     definition: {
         openapi: "3.0.0",
@@ -70,12 +74,12 @@ app.get("/", async (req, res) => {
 })
 
 
-// !making sequiliize server connection with  port 
+// !Making sequiliize server connection with  port 
 
 db.sequelize.sync().then(() => {
     app.listen(8080, async () => {
         try {
-            console.log(`app listening on port ${8080} 💻`);
+            console.log(`app  💻  listening on port ${8080} 🌐`);
         } catch (error) {
             console.log({ error: `error in connections with the  port: ${error.message}` });
         }
