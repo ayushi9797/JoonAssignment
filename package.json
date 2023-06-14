@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayushi9797/Joonweb_ass.git",
-    "server": "nodemon server.js"
+    "server": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
